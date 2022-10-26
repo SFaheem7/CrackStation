@@ -10,12 +10,12 @@ Run the "gen.py" to build your very own hash dictionary
 
 Once the json file is built
 
-Edit the tests in your "crack_StationTests.swift" to enter the hash
+Edit the tests in your "CrackStationTests.swift" to enter the hash
 
-Now run swift test in the directory of your repository
+Now run "swift test" in the directory of your repository
 
 ### If cloned the entire repository
 
-Edit the tests in your "crack_StationTests.swift" to enter the hash
+Edit the tests in your "CrackStationTests.swift" to enter the hash
 
-Now run swift test in the directory of your repository
+Now run "swift test" in the directory of your repository
