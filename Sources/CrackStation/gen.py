@@ -12,8 +12,8 @@ def myHash(arr):
 		myDict[m_Hash.hexdigest()] = val
 		myDict[mHash.hexdigest()] = val
 		
-str = "abcdefghijklmnopqrstuvwxyzABCDEFIGHLMNOPQRSTUVWXYZ0123456789";
-str2 = "abcdefghijklmnopqrstuvwxyzABCDEFIGHLMNOPQRSTUVWXYZ0123456789";  
+str = "abcdefghijklmnopqrstuvwxyzABCDEFIJKGHLMNOPQRSTUVWXYZ0123456789";
+str2 = "abcdefghijklmnopqrstuvwxyzABCDEFIGJKHLMNOPQRSTUVWXYZ0123456789";  
 n = len(str);  
 #For holding all the formed substrings  
 arr = [];  

@@ -6,9 +6,9 @@ final class CrackStationTests: XCTestCase {
         let myCrackStation = CrackStation()
 
         // When
-        let plainTextPassword = try myCrackStation.decrypt(shaHash: "e9d71f5ee7c92d6dc9e92ffdad17b8bd49418f98")
+        let plainTextPassword = try myCrackStation.decrypt(shaHash: "970f519c2cadbcefb1e81694f904bc6229dd2a8300e98c6d0d4fc4bfca584140")
         
         // Then
-        XCTAssertEqual("b", plainTextPassword)
+        XCTAssertEqual("ba", plainTextPassword)
     }
 }
