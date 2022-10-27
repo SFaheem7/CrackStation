@@ -21,8 +21,8 @@ public struct CrackStation: Decrypter {
         }
     }
 
-    public func decrypt(shaHash: String) throws -> String?{
-        let myTable : [String : String] = try CrackStation.loadDictionaryFromDisk()  
+    public func decrypt(shaHash: String) -> String?{
+        let myTable : [String : String] = try! CrackStation.loadDictionaryFromDisk()  
         
         let plaintextPassword: String? = myTable[shaHash]   
 
