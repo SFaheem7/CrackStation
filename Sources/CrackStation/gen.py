@@ -12,8 +12,9 @@ def myHash(arr):
 		myDict[m_Hash.hexdigest()] = val
 		myDict[mHash.hexdigest()] = val
 		
-str = "abcdefghijklmnopqrstuvwxyzABCDEFIJKGHLMNOPQRSTUVWXYZ0123456789";
-str2 = "abcdefghijklmnopqrstuvwxyzABCDEFIGJKHLMNOPQRSTUVWXYZ0123456789";  
+str = "abcdefghijklmnopqrstuvwxyzABCDEFIJKGHLMNOPQRSTUVWXYZ0123456789!?";
+str2 = "abcdefghijklmnopqrstuvwxyzABCDEFIGJKHLMNOPQRSTUVWXYZ0123456789!?";
+str3 = "abcdefghijklmnopqrstuvwxyzABCDEFIGJKHLMNOPQRSTUVWXYZ0123456789!?";  
 n = len(str);  
 #For holding all the formed substrings  
 arr = [];  
@@ -26,12 +27,17 @@ for i in range(0,n):
     #This loop will add a character to start character one by one till the end is reached  
     for j in range(0,n):  
         new_str = str[i] + str2[j] 
-        arr.append(new_str);  
+        arr.append(new_str);
+
+for i in range(0,n):  
+    #This loop will add a character to start character one by one till the end is reached  
+    for j in range(0,n):
+    	for k in range(0,n):
+    		new_str = str[i] + str2[j] + str3[k]
+    		arr.append(new_str)         
    
 #Prints all the subset  
-print("All subsets for given string are: ");  
-for i in arr:  
-    print(i);  		
+  		
 
 
 myHash(arr)

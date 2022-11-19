@@ -2,35 +2,40 @@ import Foundation
 import Crypto
 
 public struct CrackStation: Decrypter {
-
+    
+    private static let hashTable: [String : String] = loadDictionaryFromDisk()
+    
+    /// O(1)
     public init(){}
         
-    static func loadDictionaryFromDisk() -> [String : String] {
+    private static func loadDictionaryFromDisk() -> [String : String]{
+        do{
+            guard let path = Bundle.module.url(forResource: "data", withExtension: "json") else { return [:] }
         
-        guard let path = Bundle.module.url(forResource: "data", withExtension: "json") else { return [:] }
+            let data = try Data(contentsOf: path)
+
+            let jsonResult = try JSONSerialization.jsonObject(with: data)
         
-        let data = try! Data(contentsOf: path)
+            if let lookupTable: Dictionary = jsonResult as? Dictionary<String, String>{
 
-        let jsonResult = try! JSONSerialization.jsonObject(with: data)
+                return lookupTable
+            }
+            else{
 
-        if let lookupTable: Dictionary = jsonResult as? Dictionary<String, String> {
-            return lookupTable
+                return [:]
+            }
         }
-        
-        else{ 
+        catch{
+
             return [:]
         }
-    
+
     }
-    let myTable: [String : String] = CrackStation.loadDictionaryFromDisk()
+
+    /// O(1) lookup
     public func decrypt(shaHash: String) -> String?{
 
-        let plaintextPassword: String? = myTable[shaHash]   
-
-        if let plaintextPassword: String = plaintextPassword {
-
-            print(plaintextPassword)
-        }   
+        let plaintextPassword = Self.hashTable[shaHash]  
         
         return plaintextPassword 
     }
