@@ -1,6 +1,6 @@
 # CrackStation
 
-A swift-based tool to crack "SHA-1" and "SHA-2" encrypted passwords of upto three letters. This implementation uses a dictionary to map upto three letter combinations and their SHA-1 and SHA-2 hashes.
+A swift-based tool to crack "SHA-1" and "SHA-2" **<em>unsalted</em>** encrypted passwords of upto three letters. This implementation uses a dictionary to map upto three letter combinations and their SHA-1 and SHA-2 hashes.
 
 ## Overview
 
